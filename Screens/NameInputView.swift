@@ -1,32 +1,41 @@
 import SwiftUI
 
 struct NameInputView: View {
-    @State private var name: String = ""
-    @State private var isSubmitted: Bool = false
+    @StateObject private var viewModel = UserInputViewModel()
 
     var body: some View {
-        if isSubmitted {
-            WelcomeView(name: name)
-        } else {
+        NavigationStack {
             VStack(spacing: 20) {
-                Text("Please provide your name or nickname")
-                    .font(.headline)
+                Text("Welcome to MyApp")
+                    .font(.title)
+                    .padding(.top)
 
-                TextField("Your name", text: $name)
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
+                TextField("Enter your name", text: $viewModel.userName)
+                    .textFieldStyle(.roundedBorder)
+                    .padding(.horizontal)
 
-                Button("Submit") {
-                    isSubmitted = true
+                if viewModel.showValidationMessage && !viewModel.isValid {
+                    Text("Please enter your name")
+                        .foregroundColor(.red)
+                        .font(.footnote)
                 }
-                .disabled(name.isEmpty)
+
+                Button("Continue") {
+                    viewModel.submit()
+                }
+                .disabled(!viewModel.isValid)
                 .padding()
-                .background(name.isEmpty ? Color.gray : Color.blue)
+                .background(viewModel.isValid ? Color.blue : Color.gray)
                 .foregroundColor(.white)
-                .cornerRadius(10)
+                .cornerRadius(8)
+
+                Spacer()
             }
+            .frame(maxHeight: .infinity)
             .padding()
+            .navigationDestination(isPresented: $viewModel.isSubmitted) {
+                WelcomeView(userName: viewModel.userName)
+            }
         }
     }
 }
