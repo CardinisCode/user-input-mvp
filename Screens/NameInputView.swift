@@ -20,7 +20,7 @@ struct NameInputView: View {
                         .font(.footnote)
                 }
 
-                Button("Continue") {
+                Button("Submit") {
                     viewModel.submit()
                 }
                 .disabled(!viewModel.isValid)
