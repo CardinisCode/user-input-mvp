@@ -53,12 +53,16 @@
 ## 📂 Folder/File Structure Guide (Suggested by AI)
 
 ```
-MyApp/
-├── MyAppApp.swift          // Entry point
-├── ContentView.swift       // Hosts navigation / logic
-├── Views/
-│   ├── NameInputView.swift
-│   └── WelcomeView.swift
-└── Models/
-    └── User.swift (optional)
+user-input-mvp/
+├── HealthApp.swift               // App entry point
+├── ContentView.swift             // Hosts navigation and app logic
+├── Screens/                      // UI views
+│   ├── NameInputView.swift       // Screen for user name input
+│   └── WelcomeView.swift         // Welcome screen after input
+├── ViewModels/                   // View-specific state and logic
+│   └── UserInputViewModel.swift  // Manages user input and validation
+├── Resources/                    // Supporting files and documentation
+│   ├── README.md                 // Project overview and notes
+│   └── Assets.xcassets           // Image and color assets for the app
+
 ```
