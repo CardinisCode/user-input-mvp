@@ -1,14 +1,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var userName: String? = nil
+    @State private var userName: String = ""
+    @State private var isSubmitted: Bool = false
 
     var body: some View {
         NavigationStack {
-            if let name = userName {
-                WelcomeView(userName: name)
+            if isSubmitted {
+                WelcomeView(userName: userName)
             } else {
-                NameInputView(userName: $userName)
+                NameInputView(userName: $userName) {
+                    isSubmitted = true
+                }
             }
         }
     }
