@@ -7,7 +7,7 @@ struct NameInputView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Welcome to MyApp")
+            Text("Welcome to HealthApp")
                 .font(.title)
                 .padding(.top)
 
