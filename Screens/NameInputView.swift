@@ -1,41 +1,43 @@
 import SwiftUI
 
 struct NameInputView: View {
-    @StateObject private var viewModel = UserInputViewModel()
+    @Binding var userName: String
+    var onSubmit: () -> Void
+    @State private var showValidationMessage = false
 
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 20) {
-                Text("Welcome to MyApp")
-                    .font(.title)
-                    .padding(.top)
+        VStack(spacing: 20) {
+            Text("Welcome to MyApp")
+                .font(.title)
+                .padding(.top)
 
-                TextField("Enter your name", text: $viewModel.userName)
-                    .textFieldStyle(.roundedBorder)
-                    .padding(.horizontal)
+            TextField("Enter your name", text: $userName)
+                .textFieldStyle(.roundedBorder)
+                .padding(.horizontal)
 
-                if viewModel.showValidationMessage && !viewModel.isValid {
-                    Text("Please enter your name")
-                        .foregroundColor(.red)
-                        .font(.footnote)
-                }
-
-                Button("Submit") {
-                    viewModel.submit()
-                }
-                .disabled(!viewModel.isValid)
-                .padding()
-                .background(viewModel.isValid ? Color.blue : Color.gray)
-                .foregroundColor(.white)
-                .cornerRadius(8)
-
-                Spacer()
+            if showValidationMessage && userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                Text("Please enter your name")
+                    .foregroundColor(.red)
+                    .font(.footnote)
             }
-            .frame(maxHeight: .infinity)
+
+            Button("Submit") {
+                if userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    showValidationMessage = true
+                } else {
+                    showValidationMessage = false
+                    onSubmit()
+                }
+            }
+            .disabled(userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             .padding()
-            .navigationDestination(isPresented: $viewModel.isSubmitted) {
-                WelcomeView(userName: viewModel.userName)
-            }
+            .background(userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? Color.gray : Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(8)
+
+            Spacer()
         }
+        .frame(maxHeight: .infinity)
+        .padding()
     }
 }
