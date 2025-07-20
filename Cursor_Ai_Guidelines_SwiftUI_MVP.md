@@ -14,7 +14,7 @@
 2. **Split views into separate files** — For better readability and future scaling, each major screen or view should be its own SwiftUI struct and file.
 3. **Keep logic minimal in Views** — Avoid overly complex business logic inside SwiftUI views. Prefer separating it into helper functions or models.
 4. **Avoid external dependencies** — Only use Apple-native libraries for now (no packages like Alamofire or Firebase until explicitly requested).
-5. **Use placeholder app name** — Default to `"MyApp"` unless I give a name.
+5. **Use placeholder app name** — Default to `"HealthApp"` unless I give a name.
 
 ### 🎯 MVP-Specific Behavior
 1. The initial screen must:
