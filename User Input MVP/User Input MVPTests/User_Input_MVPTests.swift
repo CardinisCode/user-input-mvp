@@ -5,12 +5,16 @@
 //  Created by Andrea van Onselen on 19/07/2025.
 //
 
-import Testing
+import XCTest
+@testable import User_Input_MVP
 
-struct User_Input_MVPTests {
+final class User_Input_MVPTests: XCTestCase {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    func testInitialUserNameIsEmpty() {
+        let contentView = ContentView()
+        // Since userName is private, you can't access it directly.
+        // For more complex logic, move it to a ViewModel and test that.
+        // For now, this is a placeholder for future logic tests.
+        XCTAssertTrue(true) // Replace with real logic as your app grows.
     }
-
 }

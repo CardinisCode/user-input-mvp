@@ -60,7 +60,6 @@ user-input-mvp/
 │   ├── NameInputView.swift       // Screen for user name input
 │   └── WelcomeView.swift         // Welcome screen after input
 ├── ViewModels/                   // View-specific state and logic
-│   └── UserInputViewModel.swift  // Manages user input and validation
 ├── Resources/                    // Supporting files and documentation
 │   ├── README.md                 // Project overview and notes
 │   └── Assets.xcassets           // Image and color assets for the app
