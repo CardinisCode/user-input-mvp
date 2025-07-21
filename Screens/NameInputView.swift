@@ -14,6 +14,7 @@ struct NameInputView: View {
             TextField("Enter your name", text: $userName)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
+                .accessibilityIdentifier("Enter your name")
 
             if showValidationMessage && userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 Text("Please enter your name")
@@ -34,6 +35,7 @@ struct NameInputView: View {
             .background(userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? Color.gray : Color.blue)
             .foregroundColor(.white)
             .cornerRadius(8)
+            .accessibilityIdentifier("Submit")
 
             Spacer()
         }
