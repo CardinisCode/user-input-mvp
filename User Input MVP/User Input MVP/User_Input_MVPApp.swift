@@ -2,7 +2,7 @@
 //  User_Input_MVPApp.swift
 //  User Input MVP
 //
-//  Created by Andrea van Onselen on 19/07/2025.
+//  Created by Andrea van Onselen on 21/07/2025.
 //
 
 import SwiftUI
@@ -11,7 +11,6 @@ import SwiftUI
 struct User_Input_MVPApp: App {
     var body: some Scene {
         WindowGroup {
-            // This should be your custom ContentView
             ContentView()
         }
     }

@@ -2,7 +2,7 @@
 //  User_Input_MVPUITests.swift
 //  User Input MVPUITests
 //
-//  Created by Andrea van Onselen on 19/07/2025.
+//  Created by Andrea van Onselen on 21/07/2025.
 //
 
 import XCTest
@@ -37,30 +37,5 @@ final class User_Input_MVPUITests: XCTestCase {
         measure(metrics: [XCTApplicationLaunchMetric()]) {
             XCUIApplication().launch()
         }
-    }
-
-    func testInitialScreenShowsInput() {
-        let app = XCUIApplication()
-        app.launch()
-        XCTAssertTrue(app.textFields["Enter your name"].exists)
-        XCTAssertTrue(app.buttons["Submit"].exists)
-    }
-
-    func testEmptySubmissionShowsValidation() {
-        let app = XCUIApplication()
-        app.launch()
-        app.buttons["Submit"].tap()
-        XCTAssertTrue(app.staticTexts["Please enter your name"].exists)
-    }
-
-    func testValidSubmissionShowsWelcome() {
-        let app = XCUIApplication()
-        app.launch()
-        let nameField = app.textFields["Enter your name"]
-        nameField.tap()
-        nameField.typeText("Alice")
-        app.buttons["Submit"].tap()
-        XCTAssertTrue(app.staticTexts["Welcome, Alice!"].exists)
-        XCTAssertTrue(app.staticTexts["Thank you for choosing HealthApp."].exists)
     }
 }
