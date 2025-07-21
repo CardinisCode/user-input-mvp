@@ -65,3 +65,22 @@ user-input-mvp/
 │   └── Assets.xcassets           // Image and color assets for the app
 
 ```
+🧪 UI Test Plan for MVP
+
+To ensure the MVP meets user expectations and remains robust as features are added, automated UI tests should be implemented. These tests verify the core user flow and basic validation.
+
+UI Test Requirements
+1. App Launch: The app should launch to the name input screen, displaying a text field and a submit button.
+2. Validation: Attempting to submit without entering a name should display a validation message and prevent navigation.
+3. Successful Submission: Entering a valid name and tapping submit should navigate to the welcome screen, displaying a personalized welcome message and the app name.
+4. Accessibility: All interactive UI elements (e.g., text fields, buttons) must have accessibility identifiers set to ensure reliable UI testing.
+
+Sample UI Test Scenarios
+1. Initial State: Verify the presence of the name input field and submit button on launch.
+2. Empty Submission: Tap submit with an empty field and confirm that a validation message appears.
+3. Valid Submission: Enter a name, tap submit, and confirm that the welcome screen displays the correct personalized message.
+
+Best Practices
+* Use clear and consistent accessibility identifiers for all UI elements involved in testing.
+* Keep UI tests up to date as features evolve.
+* Focus on end-to-end user flows that are critical to the MVP experience.
