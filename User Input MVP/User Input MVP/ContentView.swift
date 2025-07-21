@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+    @State private var userName: String = ""
+    @State private var isSubmitted: Bool = false
 
-#Preview {
-    ContentView()
+    var body: some View {
+        NavigationStack {
+            if isSubmitted {
+                WelcomeView(userName: userName)
+            } else {
+                NameInputView(userName: $userName) {
+                    isSubmitted = true
+                }
+            }
+        }
+    }
 }

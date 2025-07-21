@@ -11,6 +11,7 @@ import SwiftUI
 struct User_Input_MVPApp: App {
     var body: some Scene {
         WindowGroup {
+            // This should be your custom ContentView
             ContentView()
         }
     }
