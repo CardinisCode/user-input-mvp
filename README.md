@@ -78,3 +78,7 @@ After re-opening my project, I ran the command "Sweetpad: Generate Build Server 
 ## Resources
 
 * Sweetpad: https://docs.cursor.com/guides/languages/swift
+
+## Project Status Notice
+
+This project is no longer being actively developed. I have decided to leave this MVP as a learning milestone and will be building a new version (V2) from scratch, applying the lessons and best practices I’ve learned here. The next iteration will feature a more robust project structure and improved workflow between Xcode, Cursor, and Sweetpad. Thank you for following along with this journey!
