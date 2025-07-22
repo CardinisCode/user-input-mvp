@@ -1,0 +1,19 @@
+{
+	"name": "xcode build server",
+	"version": "0.2",
+	"bspVersion": "2.0",
+	"languages": [
+		"c",
+		"cpp",
+		"objective-c",
+		"objective-cpp",
+		"swift"
+	],
+	"argv": [
+		"/opt/homebrew/bin/xcode-build-server"
+	],
+	"workspace": "/Users/andi/workspace/Personal projects/Comprehensive Health app/MVP/user-input-mvp/User Input MVP/User Input MVP.xcodeproj/project.xcworkspace",
+	"build_root": "/Users/andi/Library/Developer/Xcode/DerivedData/User_Input_MVP-ddwjvsjybiwwmqgrprszekozifwc",
+	"scheme": "User Input MVP",
+	"kind": "xcode"
+}
